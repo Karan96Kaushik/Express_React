@@ -22,7 +22,7 @@ var count = 0
 var last_save_state = undefined
 
 
-app.post('/content', (req, res) => {
+app.post('/react/content', (req, res) => {
     console.log(req.body)
 
     last_save_state = req.body.raw_state
@@ -31,8 +31,8 @@ app.post('/content', (req, res) => {
     
 })
 
-app.get('/content', (req, res) => {
-    console.log(req.body)
+app.get('/react/content', (req, res) => {
+    //console.log(req.body)
     
     content = {}
 

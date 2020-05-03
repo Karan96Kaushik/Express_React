@@ -12,7 +12,7 @@ class App extends Component {
 		super();
 		this.raw_state = '';
 		var _raw = ''
-		var express_server = '/content';
+		var express_server = '/react/content';
 		fetch(express_server, {
 			method: 'GET',
 		}).then(response => response.json()).then(data => {
@@ -34,7 +34,7 @@ class App extends Component {
 
 	saving_function(raw_state) {
 		var data = { raw_state: raw_state };
-		var express_server = '/content';
+		var express_server = '/react/content';
 		fetch(express_server, {
 			method: 'POST',
 			headers: {
