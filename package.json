@@ -1,0 +1,51 @@
+{
+  "name": "react-draft-js-demo",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@progress/kendo-data-query": "^1.5.3",
+    "@progress/kendo-drawing": "^1.6.0",
+    "@progress/kendo-react-buttons": "^3.13.0",
+    "@progress/kendo-react-data-tools": "^3.13.0",
+    "@progress/kendo-react-dateinputs": "^3.13.0",
+    "@progress/kendo-react-dropdowns": "^3.13.0",
+    "@progress/kendo-react-grid": "^3.13.0",
+    "@progress/kendo-react-inputs": "^3.13.0",
+    "@progress/kendo-react-intl": "^3.13.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "draft-js": "0.10.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.3",
+    "react-native-really-awesome-button": "^1.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "babel": "babel --plugins @babel/plugin-proposal-class-properties src/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-cli": "^6.26.0",
+    "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
