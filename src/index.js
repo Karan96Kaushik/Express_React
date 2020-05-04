@@ -6,6 +6,9 @@ import Manga from './manga';
 import MyEditor from './editor';
 import Btn from './button';
 import { Editor } from 'draft-js';
+import Top from './_top_bar';
+import Nav from './nav_bar';
+
 
 class App extends Component {
 	constructor() {
@@ -92,6 +95,7 @@ class Head extends Component {
 	}
 }
 
+render([<Nav comps={['My', 'Comps']}/>], document.getElementById('top'));
 render([<Head />], document.getElementById('head'));
 render([<App />], document.getElementById('root'));
 render([<Base />], document.getElementById('base'));
