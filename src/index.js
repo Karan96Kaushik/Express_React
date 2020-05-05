@@ -1,18 +1,20 @@
+import '@progress/kendo-theme-default/dist/all.css';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
 import Manga from './manga';
 import MyEditor from './editor';
-import Btn from './button';
+import Btn from './mui_button';
 import { Editor } from 'draft-js';
 import Top from './_top_bar';
 import Nav from './nav_bar';
+import { ImportContacts, Edit } from '@material-ui/icons';
 
 
 class App extends Component {
 	constructor() {
-		super()	
+		super()
 	}
 
 	_manga() {
@@ -26,17 +28,21 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<img
+					src="/react/giphy1.webp"
+					style={{
+						width: '12em', /* width of container */
+					}}
+				/>
 				<div className="side-padding-20">
-					<Btn
+					{/* <Btn
 						_onClick={this._manga}
 						_text={'Manga Downloader'}
 					/>
-					<br />
-					<br />
 					<Btn
 						_onClick={this._editor}
 						_text={'Editor'}
-					/>
+					/> */}
 				</div>
 
 				<br />
@@ -50,7 +56,7 @@ class App extends Component {
 
 class Base extends Component {
 	constructor() {
-		super()	
+		super()
 	}
 
 	_back() {
@@ -78,7 +84,7 @@ class Base extends Component {
 
 class Head extends Component {
 	constructor() {
-		super()	
+		super()
 	}
 
 	render() {
@@ -86,7 +92,7 @@ class Head extends Component {
 			<div>
 				<div className="side-padding-20">
 					<img
-						src="/nature.png"
+						src="/react/nature.png"
 						height='100px'
 					/>
 				</div>
@@ -95,7 +101,42 @@ class Head extends Component {
 	}
 }
 
-render([<Nav comps={['My', 'Comps']}/>], document.getElementById('top'));
-render([<Head />], document.getElementById('head'));
+class NavBar extends Component {
+	constructor() {
+		super()
+		this.buttons = [
+			{
+				_text: 'Manga Downloader',
+				_onClick: this._manga_click,
+				_icon: ImportContacts
+			},
+			{
+				_text: 'Editor',
+				_onClick: this._editor_click,
+				_icon: Edit
+			}
+		]
+
+	}
+
+	_manga_click() {
+		render([<Head />], document.getElementById('head'));
+		render([<Manga />], document.getElementById('root'));
+	}
+
+	_editor_click() {
+		render([<Head />], document.getElementById('head'));
+		render([<MyEditor />], document.getElementById('root'));
+	}
+
+	render() {
+		return (
+			<Nav comps={this.buttons} />
+		);
+	}
+}
+
+render([<NavBar />], document.getElementById('top'));
+//render([<Head />], document.getElementById('head'));
 render([<App />], document.getElementById('root'));
-render([<Base />], document.getElementById('base'));
+//render([<Base />], document.getElementById('base'));

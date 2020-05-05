@@ -30,6 +30,7 @@ class ButtonContainer extends React.Component {
     render() {
         return ([
             <Button
+                style={{backgroundColor: "red"}}
                 onClick={this.handleDomEvent}
                 onMouseDown={this.handleDomEvent}
                 onMouseUp={this.handleDomEvent}

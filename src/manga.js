@@ -1,10 +1,10 @@
+import '@progress/kendo-theme-default/dist/all.css';
 import React, { Component } from 'react';
 import './style.css';
 
-import Btn from './button';
-import Inp from './input';
+import Btn from './mui_button';
+import Inp from './mui_input';
 import GetData from './getdata';
-
 
 class App extends Component {
 	constructor() {
@@ -53,23 +53,17 @@ class App extends Component {
 					<Inp
 						_onChange={this._changed}
 					/>
-					<br />
-					<br />
 					<Btn 
 						_onClick={this._downlaod}
 						_text={'Download'}
 					/>
 					<br />
-					<br />
 					<a href='http://creepyfuck.tech/Manga/'>
-						<img src='/comic.png' height='50px' />
+						<img src='/react/comic.png' height='50px' />
 					</a>
 				</div>
 
 				<br />
-				<div>
-
-				</div>
 			</div>
 		);
 	}
