@@ -49,7 +49,7 @@ class App extends Component {
 	_get_list() {
 		console.log(this.state)
 
-		fetch('http://localhost:4545/react/getbookmarks', {
+		fetch('/react/getbookmarks', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ class App extends Component {
 
 
 
-		fetch('http://localhost:4545/react/addbookmarks', {
+		fetch('/react/addbookmarks', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
