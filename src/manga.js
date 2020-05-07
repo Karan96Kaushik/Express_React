@@ -4,7 +4,6 @@ import './style.css';
 
 import Btn from './mui_button';
 import Inp from './mui_input';
-import GetData from './getdata';
 
 class App extends Component {
 	constructor() {
@@ -18,7 +17,6 @@ class App extends Component {
 	}
 
 	_downlaod() {
-		var val = this._value
 		var data = {
 			fname: this._value
 		}
@@ -52,6 +50,7 @@ class App extends Component {
 				<div className="side-padding-20">
 					<Inp
 						_onChange={this._changed}
+						_label="Link"
 					/>
 					<Btn 
 						_onClick={this._downlaod}
@@ -59,7 +58,7 @@ class App extends Component {
 					/>
 					<br />
 					<a href='http://creepyfuck.tech/Manga/'>
-						<img src='/react/comic.png' height='50px' />
+						<img alt='Open Comics' src='/react/comic.png' height='50px' />
 					</a>
 				</div>
 

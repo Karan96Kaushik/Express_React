@@ -6,8 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Drawer } from '@material-ui/core';
-import Diag from './diag'
+import Diag from './diag_login'
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -30,9 +29,19 @@ export default function ButtonAppBar(props) {
 	const [open, setOpen] = React.useState(false);
 	const [selectedValue, setSelectedValue] = React.useState('');
 
+	var account;
+
+	if(window.localStorage.getItem('sel_account') === '') {
+		account = 'Login'
+	}
+
+	const [sel_account, setValue] = React.useState(account);
+
 	var menu_onClick = props.menu_onClick;
 
 	var handleClose = (value) => {
+		setValue(value)
+		props.login(value)
 		setOpen(false);
 	    setSelectedValue(value);
 	}
@@ -47,7 +56,7 @@ export default function ButtonAppBar(props) {
 					<Typography variant="h6" className={classes.title}>
 						L, DO YOU KNOW?
         			</Typography>
-					<Button onClick={() => {setOpen(true)}} style={{color: 'black'}} color="primary">Login</Button>
+					<Button onClick={() => {setOpen(true)}} style={{color: 'black'}} color="primary">{sel_account}</Button>
 				</Toolbar>
 			</AppBar>
 			<Diag open={open} selectedValue={selectedValue} onClose={handleClose} />

@@ -1,10 +1,6 @@
 import RichEditorExample from './draft';
-import Btn from './button';
-import Inp from './input';
-import GetData from './getdata';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import './style.css';
 
 class App extends Component {
@@ -12,9 +8,20 @@ class App extends Component {
 		super();
 		this.raw_state = '';
 		var _raw = ''
-		var express_server = '/react/content';
+		var express_server = '/react/getcontent';
+
+		var data = {
+			account: window.localStorage.getItem('sel_account'),
+		}
+
+		console.log('GET Data', data)
+
 		fetch(express_server, {
-			method: 'GET',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
 		}).then(response => response.json()).then(data => {
 
 			if (data.raw_state) {
@@ -33,7 +40,12 @@ class App extends Component {
 	}
 
 	saving_function(raw_state) {
-		var data = { raw_state: raw_state };
+		var data = {
+			raw_state: raw_state,
+			account: window.localStorage.getItem('sel_account'), 
+		};
+		console.log('Post Data', data)
+		
 		var express_server = '/react/content';
 		fetch(express_server, {
 			method: 'POST',

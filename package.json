@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "@condenast/xml-to-react": "^1.0.0",
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
     "@progress/kendo-data-query": "^1.5.3",
@@ -16,6 +17,8 @@
     "@progress/kendo-react-inputs": "^3.13.0",
     "@progress/kendo-react-intl": "^3.13.0",
     "@progress/kendo-theme-default": "^4.17.0",
+    "@svgr/cli": "^5.4.0",
+    "@svgr/core": "^5.4.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "draft-js": "0.10.5",

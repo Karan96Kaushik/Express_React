@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { PinDropSharp } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
 	boot: {
@@ -37,10 +38,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function BasicTextFields(props) {
+	var label = props._label ? props._label: ""
 	const classes = useStyles();
-	const [_value, setValue] = useState('');
 
 	return (
-		<TextField onChange={props._onChange} spellCheck={false} className={classes.boot} id="custom-css-standard-input" label="Link" />
+		<TextField
+			onChange={props._onChange}
+			spellCheck={false}
+			className={classes.boot}
+			label={label}
+			value={props._value}
+			/>
 	);
 }

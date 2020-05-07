@@ -69,7 +69,7 @@ export default function TemporaryDrawer(props) {
     return (
         <div>
             <React.Fragment key={'bar'}>
-                <Top menu_onClick={toggleDrawer('bar', true)} />
+                <Top login={props.login} menu_onClick={toggleDrawer('bar', true)} />
                 <Drawer classes={{ paper: classes.paper }} anchor={'left'} open={state['bar']} onClose={toggleDrawer('bar', false)}>
                     {list('bar', list_comps)}
                 </Drawer>

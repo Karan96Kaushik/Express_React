@@ -22,7 +22,7 @@ function myKeyBindingFn(e: SyntheticKeyboardEvent): string {
 
 const MAX_LENGTH = 10;
 
-class RichEditorExample extends React.Component {
+class RichEditorExample extends Component {
 	constructor(props) {
 		super(props);
 
@@ -74,7 +74,6 @@ class RichEditorExample extends React.Component {
 			// a new `editorState`, etc.
 			var raw_content = convertToRaw(this.state.editorState.getCurrentContent());
 			//var raw_state = convertToRaw(this.state.editorState);
-			var _state = convertFromRaw(raw_content)
 			// window.localStorage.setItem('content', JSON.stringify(raw_content));
 			// this.state = {
 			//     editorState: EditorState.createEmpty(),
