@@ -7,7 +7,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Btn from './mui_button';
 import Inp from './mui_input';
-import GetData from './getdata';
+//import GetData from './getdata';
 import grey from '@material-ui/core/colors/grey'
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core';

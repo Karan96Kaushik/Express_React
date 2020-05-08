@@ -1,17 +1,16 @@
 import '@progress/kendo-theme-default/dist/all.css';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import './style.css';
 import Manga from './manga';
 import Bookmarks from './bookmark';
+import BookmarksIpad from './bookmarksipad';
 import MyEditor from './editor';
 import Btn from './mui_button';
-import { Editor } from 'draft-js';
-import Top from './_top_bar';
 import Nav from './nav_bar';
-import { ImportContacts, Edit, Bookmark } from '@material-ui/icons';
-import {SocialIcon, WritingIcon, LibraryIcon} from './social_svg';
+import FontsApp from './fonts_app';
+//import { ImportContacts, Edit, Bookmark } from '@material-ui/icons';
+import { SocialIcon, WritingIcon, LibraryIcon } from './social_svg';
 //import {WritingIcon} from './social_svg';
 
 var current_page = 'home'
@@ -20,7 +19,6 @@ class App extends Component {
 	constructor() {
 		super()
 	}
-
 	render() {
 		return (
 			<div>
@@ -98,6 +96,7 @@ class Head extends Component {
 }
 
 class NavBar extends Component {
+
 	constructor() {
 		super()
 		this.buttons = [
@@ -115,9 +114,18 @@ class NavBar extends Component {
 				_text: 'Bookmarks',
 				_onClick: () => { this._openapp('bookmarks') },
 				_icon: LibraryIcon
-			}
+			},
+			// {
+			// 	_text: 'Fonts App',
+			// 	_onClick: () => { this._openapp('fonts') },
+			// 	_icon: WritingIcon
+			// },
+			// {
+			// 	_text: 'Ipad Bookmarks',
+			// 	_onClick: () => { this._openapp('bookmarksipad') },
+			// 	_icon: LibraryIcon
+			// }
 		]
-
 	}
 
 	_openapp = function (app_name) {
@@ -132,6 +140,13 @@ class NavBar extends Component {
 				break;
 			case 'bookmarks':
 				render([<Bookmarks />], document.getElementById('root'));
+				break;
+			case 'bookmarksipad':
+				render_for_ipad()
+				break;
+				case 'fonts':
+				render([<FontsApp />], document.getElementById('root'));
+				//render_for_ipad()
 				break;
 			default:
 				break;
@@ -156,3 +171,19 @@ render([<NavBar />], document.getElementById('top'));
 //render([<Head />], document.getElementById('head'));
 render([<App />], document.getElementById('root'));
 //render([<Base />], document.getElementById('base'));
+
+
+
+function render_for_ipad() {
+	fetch('/react/getbookmarks', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify([]),
+	})
+		.then(response => response.json())
+		.then(data => {
+			render([<BookmarksIpad list_arr={data} />], document.getElementById('root'));
+		})
+}

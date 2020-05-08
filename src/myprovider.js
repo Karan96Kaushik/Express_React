@@ -9,14 +9,7 @@ class MyProvider extends Component {
         return (
             <MyContext.Provider
                 value={{
-                    cars: this.state.cars,
-                    change: selectedID => {
-                        var account = Object.assign({}, this.state.account);
-                        account = selectedID;
-                        this.setState({
-                            account
-                        });
-                    }
+                    cars: this.state.account
                 }}
             >
                 {this.props.children}

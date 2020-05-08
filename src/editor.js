@@ -2,8 +2,11 @@ import RichEditorExample from './draft';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './style.css';
+import LoginContext from './mycontext'
 
 class App extends Component {
+	static contextType = LoginContext;
+
 	constructor() {
 		super();
 		this.raw_state = '';
@@ -39,7 +42,15 @@ class App extends Component {
 		this.myRef = React.createRef()
 	}
 
+	componentDidMount() {
+		this.user = this.context
+		setTimeout(() => {
+			console.log('USER', this.user)			
+		}, 5000);
+	}
+	
 	saving_function(raw_state) {
+		
 		var data = {
 			raw_state: raw_state,
 			account: window.localStorage.getItem('sel_account'), 
@@ -67,6 +78,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
+				<div>{}</div>
 				<br />
 				<div className="side-padding-20">
 					<RichEditorExample

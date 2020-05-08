@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-// this is the equivalent to the createStore method of Redux
-// https://redux.js.org/api/createstore
+const UserContext = React.createContext()
 
-const MyContext = React.createContext();
+export const LoginProvider = UserContext.Provider
+export const LoginConsumer = UserContext.Consumer
 
-export default MyContext;
+export default UserContext

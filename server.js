@@ -2,10 +2,15 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const fs = require('fs')
+const cors = require("cors");
 const path = require('path')
-var bookmark_list = require('./bookmark_list.json')
 
-var cors = require("cors");
+try {
+    var bookmark_list = require('./bookmark_list.json')    
+} catch (error) {
+    var bookmark_list = [];
+    fs.writeFile('./bookmark_list.json', JSON.stringify(bookmark_list), () => { });
+}
 
 print = console.log
 
@@ -17,7 +22,7 @@ app.use(bodyParser.json({ limit: '50mb' }))
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-print('Server started')
+print('Server Started')
 
 var count = 0
 

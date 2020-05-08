@@ -27,7 +27,8 @@
     "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-native-really-awesome-button": "^1.6.0"
+    "react-native-really-awesome-button": "^1.6.0",
+    "unifont": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

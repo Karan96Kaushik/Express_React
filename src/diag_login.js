@@ -11,8 +11,10 @@ import Dialog from '@material-ui/core/Dialog';
 import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 import { blue } from '@material-ui/core/colors';
+import { LoginProvider } from './mycontext'
 
 const emails = ['Karan', 'Nandita'];
+
 const useStyles = makeStyles({
 	avatar: {
 		backgroundColor: blue[100],
@@ -35,6 +37,7 @@ function SimpleDialog(props) {
 	};
 
 	return (
+		<LoginProvider value={'selectedValue'}>
 		<Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
 			<DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
 			<List>
@@ -66,6 +69,7 @@ function SimpleDialog(props) {
 				</ListItem>
 			</List>
 		</Dialog>
+		</LoginProvider>
 	);
 }
 

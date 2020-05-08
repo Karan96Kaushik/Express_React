@@ -40,12 +40,14 @@ export default function ButtonAppBar(props) {
 	var menu_onClick = props.menu_onClick;
 
 	var handleClose = (value) => {
-		setValue(value)
-		props.login(value)
+		if(value != sel_account) {
+			setSelectedValue(value);
+			setValue(value)
+			props.login(value)
+			console.log("LoGIN", selectedValue, sel_account)
+		}
 		setOpen(false);
-	    setSelectedValue(value);
 	}
-
 	return (
 		<div>
 			<AppBar className={classes.root} position="static" color="inherit">
