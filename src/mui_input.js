@@ -8,12 +8,12 @@ const useStyles = makeStyles((theme) => ({
 		'& > *': {
 			margin: theme.spacing(1),
 			width: '25ch',
-			color: 'white',
+			color: 'black',
 			textAlign: 'left',
 			borderColor: 'yellow'
 		},
 		'& label': {
-			color: 'grey',
+			color: 'black',
 			fontSize: '10px'
 		},
 		'& label.Mui-focused': {

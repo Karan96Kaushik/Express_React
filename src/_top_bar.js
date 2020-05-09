@@ -56,7 +56,7 @@ export default function ButtonAppBar(props) {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant="h6" className={classes.title}>
-						L, DO YOU KNOW?
+						Font App Demo
         			</Typography>
 					<Button onClick={() => {setOpen(true)}} style={{color: 'black'}} color="primary">{sel_account}</Button>
 				</Toolbar>

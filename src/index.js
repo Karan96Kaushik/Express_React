@@ -100,26 +100,26 @@ class NavBar extends Component {
 	constructor() {
 		super()
 		this.buttons = [
-			{
-				_text: 'Manga Downloader',
-				_onClick: () => { this._openapp('manga') },
-				_icon: SocialIcon
-			},
-			{
-				_text: 'Editor',
-				_onClick: () => { this._openapp('editor') },
-				_icon: WritingIcon
-			},
-			{
-				_text: 'Bookmarks',
-				_onClick: () => { this._openapp('bookmarks') },
-				_icon: LibraryIcon
-			},
 			// {
-			// 	_text: 'Fonts App',
-			// 	_onClick: () => { this._openapp('fonts') },
+			// 	_text: 'Manga Downloader',
+			// 	_onClick: () => { this._openapp('manga') },
+			// 	_icon: SocialIcon
+			// },
+			// {
+			// 	_text: 'Editor',
+			// 	_onClick: () => { this._openapp('editor') },
 			// 	_icon: WritingIcon
 			// },
+			// {
+			// 	_text: 'Bookmarks',
+			// 	_onClick: () => { this._openapp('bookmarks') },
+			// 	_icon: LibraryIcon
+			// },
+			{
+				_text: 'Fonts App',
+				_onClick: () => { this._openapp('fonts') },
+				_icon: WritingIcon
+			},
 			// {
 			// 	_text: 'Ipad Bookmarks',
 			// 	_onClick: () => { this._openapp('bookmarksipad') },
@@ -130,7 +130,7 @@ class NavBar extends Component {
 
 	_openapp = function (app_name) {
 		current_page = app_name
-		render([<Head />], document.getElementById('head'));
+		//render([<Head />], document.getElementById('head'));
 		switch (app_name) {
 			case 'manga':
 				render([<Manga />], document.getElementById('root'));
@@ -169,7 +169,7 @@ class NavBar extends Component {
 
 render([<NavBar />], document.getElementById('top'));
 //render([<Head />], document.getElementById('head'));
-render([<App />], document.getElementById('root'));
+render([<FontsApp />], document.getElementById('root'));
 //render([<Base />], document.getElementById('base'));
 
 
@@ -184,6 +184,6 @@ function render_for_ipad() {
 	})
 		.then(response => response.json())
 		.then(data => {
-			render([<BookmarksIpad list_arr={data} />], document.getElementById('root'));
+			render([<FontsApp list_arr={data} />], document.getElementById('root'));
 		})
 }

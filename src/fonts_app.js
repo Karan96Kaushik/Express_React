@@ -14,7 +14,7 @@ import { createMuiTheme } from '@material-ui/core';
 //import './font_extractor/unifont_module'
 import fontify from 'unifont'
 import { dark } from '@material-ui/core/styles/createPalette';
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
 console.log()
@@ -43,14 +43,17 @@ class App extends Component {
 
         this.data = []
 
-        fonts.map((font) => {
-            var option = {
-                font: font,
-                style: ""
-            }
+            fonts.map((font) => {
+                var option = {
+                    font: font,
+                    style: ""
+                }
 
-            this.data.push(fontify("Fontify text", option));
-        })
+                this.data.push({
+                    font: font,
+                    data: fontify("Fontify Text", option)
+                });
+            })
 
         this.state = {
             _text: 'Fontify text',
@@ -58,6 +61,7 @@ class App extends Component {
         }
 
         this._changed_name = this._changed_name.bind(this)
+        //this.handleListItemClick = this.handleListItemClick.bind(this);
     }
 
     async _changed_name(state) {
@@ -77,7 +81,10 @@ class App extends Component {
                     style: ""
                 }
 
-                data.push(fontify(_text, option));
+                data.push({
+                    font: font,
+                    data: fontify(_text, option)
+                });
             })
             console.log(data)
             return data;
@@ -96,9 +103,39 @@ class App extends Component {
         }))
     }
 
-    handleListItemClick = (item) => {
-        var win = window.open(item.link, '_blank');
-        win.focus();
+    handleListItemClick(e) {
+        // function _copyText(element) {
+        //     var range, selection, worked;
+          
+        //     if (document.body.createTextRange) {
+        //       range = document.body.createTextRange();
+        //       range.moveToElementText(element);
+        //       range.select();
+        //     } else if (window.getSelection) {
+        //       selection = window.getSelection();        
+        //       range = document.createRange();
+        //       range.selectNodeContents(element);
+        //       selection.removeAllRanges();
+        //       selection.addRange(range);
+        //     }
+            
+        //     try {
+        //       document.execCommand('copy');
+        //       alert('text copied');
+        //     }
+        //     catch (err) {
+        //       alert('unable to copy text');
+        //     }
+        //   }
+        // console.log('EVENT', e)
+        // var copyText = document.getElementById(e);
+        // _copyText(copyText)
+        // console.log("HTML", copyText.innerHTML)
+        // CopyToClipboard(copyText.innerHTML)
+        //copyText.select();
+        //document.execCommand("copy");
+        // var win = window.open(item.link, '_blank');
+        // win.focus();
     }
 
     render() {
@@ -114,8 +151,8 @@ class App extends Component {
                         />
                         <List>
                             {this.state._data.map((data) => (
-                                <ListItem button onClick={() => this.handleListItemClick(data)} >
-                                    <ListItemText primary={data} />
+                                <ListItem button onClick={() => this.handleListItemClick(data.font)} id={data.font} >
+                                    <ListItemText primary={data.data} />
                                 </ListItem>
                             ))}
                         </List>
