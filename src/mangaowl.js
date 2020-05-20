@@ -13,7 +13,6 @@ class App extends Component {
 		super();
 		this._value = ''
 		this.promiseOptions = this.promiseOptions.bind(this);
-		this.chapOptions = this.chapOptions.bind(this);
 		this._downlaod = this._downlaod.bind(this);
 
 		this.state = {
