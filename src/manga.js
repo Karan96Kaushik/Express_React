@@ -4,6 +4,8 @@ import './style.css';
 
 import Btn from './mui_button';
 import Inp from './mui_input';
+import Combo from './search';
+import swal from 'sweetalert';
 
 class App extends Component {
 	constructor() {
@@ -24,19 +26,23 @@ class App extends Component {
 		function serialize(obj) {
 			var str = [];
 			for (var p in obj)
-			  if (obj.hasOwnProperty(p)) {
-				str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-			  }
+				if (obj.hasOwnProperty(p)) {
+					str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+				}
 			return str.join("&");
-		  }
+		}
 
+		//swal('Downloading', data)
 
 		fetch('http://creepyfuck.tech/down?' + serialize(data), {
+		//fetch('http://cathedral.local/down?' + serialize(data), {
 			method: 'POST',
 		})
 			.then(response => response.json())
 			.then(data => {
 				console.log('Success:', data);
+				swal('Downloading', data[0])
+
 			})
 			.catch((error) => {
 				console.error('Error:', error);
@@ -52,8 +58,9 @@ class App extends Component {
 						_onChange={this._changed}
 						_label="Link"
 					/>
-					<Btn 
+					<Btn
 						_onClick={this._downlaod}
+						_onFocus={this._downlaod}
 						_text={'Download'}
 					/>
 					<br />

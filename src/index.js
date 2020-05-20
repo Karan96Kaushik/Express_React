@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import Manga from './manga';
+import MangaOwl from './mangaowl';
 import Bookmarks from './bookmark';
 import BookmarksIpad from './bookmarksipad';
 import MyEditor from './editor';
@@ -10,7 +11,7 @@ import Btn from './mui_button';
 import Nav from './nav_bar';
 import FontsApp from './fonts_app';
 //import { ImportContacts, Edit, Bookmark } from '@material-ui/icons';
-import { SocialIcon, WritingIcon, LibraryIcon } from './social_svg';
+import { SocialIcon, WritingIcon, LibraryIcon, OwlIcon } from './social_svg';
 //import {WritingIcon} from './social_svg';
 
 var current_page = 'home'
@@ -106,6 +107,11 @@ class NavBar extends Component {
 				_icon: SocialIcon
 			},
 			{
+				_text: 'Manga Owl',
+				_onClick: () => { this._openapp('mangaowl') },
+				_icon: OwlIcon
+			},
+			{
 				_text: 'Editor',
 				_onClick: () => { this._openapp('editor') },
 				_icon: WritingIcon
@@ -135,6 +141,9 @@ class NavBar extends Component {
 			case 'manga':
 				render([<Manga />], document.getElementById('root'));
 				break;
+				case 'mangaowl':
+					render([<MangaOwl />], document.getElementById('root'));
+					break;
 			case 'editor':
 				render([<MyEditor />], document.getElementById('root'));
 				break;

@@ -22,7 +22,7 @@ export default function ContainedButtons(props) {
 
     return (
         <div className={classes.root}>
-            <Button className={classes.button} onClick={props._onClick} variant="contained" color="primary">
+            <Button className={classes.button} onFocus={props._onFocus} onClick={props._onClick} variant="contained" color="primary">
                 {props._text}
       </Button>
         </div>

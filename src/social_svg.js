@@ -1,6 +1,7 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Libsvg from './LibrarySvg'
+import Owlsvg from './OwlIcon'
 
 function SvgSocial(props) {
   return (
@@ -152,6 +153,15 @@ function LibraryIcon(props) {
     );
 }
 
+function OwlIcon(props) {
+  return (
+      < SvgIcon {...props}>
+         <Owlsvg />
+      </SvgIcon >
+  );
+}
+
 export {SocialIcon};
 export {WritingIcon};
-export {LibraryIcon}
+export {LibraryIcon};
+export {OwlIcon};
