@@ -32,15 +32,15 @@ class App extends Component {
 
 	handleClick = (obj) => {
 		if(obj.enable) {
-			var win = window.open("http://creepyfuck.tech" + obj.loc, '_blank');
-			//var win = window.open("http://localhost" + obj.loc, '_blank');
+			// var win = window.open("http://creepyfuck.tech" + obj.loc, '_blank');
+			var win = window.open("http://localhost" + obj.loc, '_blank');
 			win.focus();
 		}
 	}
 
 	get_status = () => {
-		// var link = 'http://localhost:3333/status'
-		var link = 'http://creepyfuck.tech/status'
+		var link = 'http://localhost:3333/status'
+		// var link = 'http://creepyfuck.tech/status'
 
 		fetch(link, {
 			method: 'GET',
@@ -48,7 +48,7 @@ class App extends Component {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log(data)
+				console.log("STATUS", data)
 
 				var keys = Object.keys(data).slice(0,10)
 				var stuff = []
@@ -80,14 +80,12 @@ class App extends Component {
 					return 0;
 				});
 
-				console.log('Success:', data);
+				//console.log('Success:', data);
 				this.setState({ status: stuff })
 			})
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-
-	
 	}
 
 	promiseOptions(e) {
@@ -141,8 +139,8 @@ class App extends Component {
 		//console.log('',this._value,'','Selected URL', url.value );
 		this.state.anime = "https://mangaowl.net" + url.value;
 
-		// var link = 'http://localhost:3333/anime_list?url=' + encodeURIComponent(this.state.anime)
-		var link = 'http://creepyfuck.tech/anime_list?url=' + encodeURIComponent(this.state.anime)
+		var link = 'http://localhost:3333/anime_list?url=' + encodeURIComponent(this.state.anime)
+		// var link = 'http://creepyfuck.tech/anime_list?url=' + encodeURIComponent(this.state.anime)
 
 		fetch(link, {
 			method: 'GET',
@@ -188,8 +186,8 @@ class App extends Component {
 
 		//swal('Downloading', data)
 
-		fetch('http://creepyfuck.tech/down?' + serialize(data), {
-		// fetch('http://localhost:3333/down?' + serialize(data), {
+		// fetch('http://creepyfuck.tech/down?' + serialize(data), {
+		fetch('http://localhost:3333/down?' + serialize(data), {
 			method: 'POST',
 		})
 			.then(response => response.json())
