@@ -29,6 +29,7 @@
     "rc-progress": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-download-link": "^2.3.0",
     "react-native-really-awesome-button": "^1.6.0",
     "react-select": "^3.1.0",
     "sweet-alert": "^2.0.5",

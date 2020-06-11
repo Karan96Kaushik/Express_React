@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import './style.css';
 import Manga from './manga';
 import MangaOwl from './mangaowl';
+import Gogo from './gogoanime';
 import Bookmarks from './bookmark';
 import BookmarksIpad from './bookmarksipad';
 import MyEditor from './editor';
@@ -112,6 +113,11 @@ class NavBar extends Component {
 				_icon: OwlIcon
 			},
 			{
+				_text: 'Gogo Anime',
+				_onClick: () => { this._openapp('gogo') },
+				_icon: OwlIcon
+			},
+			{
 				_text: 'Editor',
 				_onClick: () => { this._openapp('editor') },
 				_icon: WritingIcon
@@ -141,9 +147,12 @@ class NavBar extends Component {
 			case 'manga':
 				render([<Manga />], document.getElementById('root'));
 				break;
-				case 'mangaowl':
-					render([<MangaOwl />], document.getElementById('root'));
-					break;
+			case 'mangaowl':
+				render([<MangaOwl />], document.getElementById('root'));
+				break;
+			case 'gogo':
+				render([<Gogo />], document.getElementById('root'));
+				break;
 			case 'editor':
 				render([<MyEditor />], document.getElementById('root'));
 				break;
@@ -153,7 +162,7 @@ class NavBar extends Component {
 			case 'bookmarksipad':
 				render_for_ipad()
 				break;
-				case 'fonts':
+			case 'fonts':
 				render([<FontsApp />], document.getElementById('root'));
 				//render_for_ipad()
 				break;
