@@ -5,6 +5,26 @@ const fs = require('fs')
 const cors = require("cors");
 const path = require('path')
 
+print = console.log
+
+const { Sequelize, Model, DataTypes, Op } = require('sequelize');
+
+const sequelize = new Sequelize(
+	'postgres',
+	'postgres',
+	'0Bama-mama',
+	{
+		dialect: 'postgresql',
+		host: 'creepyfuck.tech',
+		port: 5432,
+		logging: false
+	}
+);
+
+var gogo = sequelize.import('./models/gogo')
+
+gogo.sync()
+
 try {
     var bookmark_list = require('./bookmark_list.json')    
 } catch (error) {
@@ -68,5 +88,29 @@ app.post('/react/getcontent', (req, res) => {
 app.get('/react', (req, res) => {
 
     res.sendFile(path.join(__dirname, 'build/index.html'))
+
+})
+
+app.get('/gogo_ep', (req, res) => {
+    // console.log(req.body)
+
+    data = {
+        anime: req.body.anime,
+        anime_url: req.body.anime_url,
+        episode: req.body.name,
+        link: req.body.link
+    }
+    
+    gogo.create(data).then((ret) => {
+        print(ret.dataValues)
+        count++
+        print(count)
+        res.send("Done")
+    }, (err) => {
+        print(err)
+        print(count)
+        res.send("Err")
+    })
+    
 
 })
