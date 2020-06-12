@@ -15,7 +15,7 @@ class App extends Component {
 		this._value = ''
 		this.promiseOptions = this.promiseOptions.bind(this);
 		this._downlaod = this._downlaod.bind(this);
-		this.get_status = this.get_status.bind(this);
+		// this.get_status = this.get_status.bind(this);
 
 		this.state = {
 			anime: '',
@@ -30,8 +30,8 @@ class App extends Component {
 
 	handleClick = (obj) => {
 		if(obj.enable) {
-			var win = window.open("http://creepyfuck.tech" + obj.loc, '_blank');
-			// var win = window.open("http://localhost" + obj.loc, '_blank');
+			// var win = window.open("http://creepyfuck.tech" + obj.loc, '_blank');
+			var win = window.open("http://localhost" + obj.loc, '_blank');
 			win.focus();
 		}
 	}
@@ -42,8 +42,8 @@ class App extends Component {
 		if (data.length > 3) {
 			console.log("Search for", data)
 
-			// var link = 'http://localhost:3333/gogo_search?string=' + encodeURIComponent(data)
-			var link = 'http://creepyfuck.tech/gogo_search?string=' + encodeURIComponent(data)
+			var link = 'http://localhost:3333/gogo_search?string=' + encodeURIComponent(data)
+			// var link = 'http://creepyfuck.tech/gogo_search?string=' + encodeURIComponent(data)
 			console.log('LINK', link)
 
 			return new Promise(resolve => {
@@ -88,8 +88,8 @@ class App extends Component {
 		//console.log('',this._value,'','Selected URL', url.value );
 		this.state.anime = url.value;
         console.log("Selected Anime URL", url)
-		// var link = 'http://localhost:3333/gogo_eps?url=' + encodeURIComponent(this.state.anime)
-		var link = 'http://creepyfuck.tech/gogo_eps?url=' + encodeURIComponent(this.state.anime)
+		var link = 'http://localhost:3333/gogo_eps?url=' + encodeURIComponent(this.state.anime)
+		// var link = 'http://creepyfuck.tech/gogo_eps?url=' + encodeURIComponent(this.state.anime)
 
 		fetch(link, {
 			method: 'GET',
@@ -135,22 +135,15 @@ class App extends Component {
 
 		//swal('Downloading', data)
 
-		fetch('http://creepyfuck.tech/gogo_video?' + serialize(data), {
-		// fetch('http://localhost:3333/gogo_video?' + serialize(data), {
-			method: 'POST',
+		// fetch('http://creepyfuck.tech/gogo_video?' + serialize(data), {
+		fetch('http://localhost:4545/gogo_episode_link?' + serialize(data), {
+			// fetch('http://localhost:3333/gogo_video?' + serialize(data), {
+			method: 'GET',
 		})
 			.then(response => response.json())
 			.then(data => {
                 console.log('Success:', data);
-                this.setState({links: data})
-                // swal('Downloading', data[0])
-                const link = document.createElement('a');
-				link.href = data.link;
-				
-				link.setAttribute("download", data.name);
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
+                this.setState({links: [data]})
 
 			})
 			.catch((error) => {
