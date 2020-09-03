@@ -1,5 +1,6 @@
 # React Test Website
 https://cryers.club/react
+Pairs with ComixClonerServer
 
 ## SVG Icons
 
