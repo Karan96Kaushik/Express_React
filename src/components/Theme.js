@@ -48,11 +48,13 @@ const lightTheme = createMuiTheme({
 		background: {
 			// default: "#364958",
 			primary: {
+				light: greyScale["White"],
 				main: greyScale["Cultured"],
-				dark: seaNgrass["CharcoalDark"]
+				dark: seaNgrass["Charcoal"]
 			},
 			secondary: {
 				main: greyScale["White"],
+				dark: seaNgrass["Charcoal"]
 			}// contrast: grey[500],
 		}
 	},
@@ -61,7 +63,7 @@ const lightTheme = createMuiTheme({
 	},
 	props: {
 		MuiButtonBase: {
-			disableRipple: true, // No more ripple
+			disableRipple: false, // No more ripple
 		},
 	},
 	layout: {
@@ -85,10 +87,12 @@ const darkTheme = createMuiTheme({
 			// default: "#364958",
 			primary: {
 				main: "#262626",
-				dark: seaNgrass["CharcoalDark"],
+				dark: seaNgrass["Deep Space Sparkle"],
+				// dark: greyScale["Gunmetal"],
 			},
 			secondary: {
 				main: seaNgrass["Deep Space Sparkle"],
+				dark: seaNgrass["Deep Space Sparkle"],
 			}// contrast: grey[500],
 		}
 	},
@@ -97,7 +101,7 @@ const darkTheme = createMuiTheme({
 	},
 	props: {
 		MuiButtonBase: {
-			disableRipple: true, // No more ripple
+			disableRipple: false, // No more ripple
 		},
 	},
 	layout: {

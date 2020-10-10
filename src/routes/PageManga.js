@@ -28,6 +28,7 @@ import Btn from '../components/mui_button';
 import Inp from '../components/mui_input';
 import Combo from '../components/search';
 import swal from 'sweetalert';
+import { Typography } from "@material-ui/core";
 
 const styles = theme => ({
     count: {
@@ -178,6 +179,7 @@ const PageProject = ({ classes, props }) => {
                 <Grid item xs={12} md={6}>
                     <div>
                         <div className={classes.ryuk}>
+						<Typography variant="h3" color="primary">Manga Downloader</Typography>
                             <Inp
                                 _onChange={_changed}
                                 _label="Link"

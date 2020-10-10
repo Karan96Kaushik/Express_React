@@ -5,9 +5,13 @@ import PageProjects from './routes/PageProjects';
 import PageVersion from './routes/PageVersion';
 import PageLogin from './routes/PageLogin';
 import PageProfile from './routes/PageProfile';
-import PageSignUp from './routes/PageSignUp';
+// import PageSignUp from './routes/PageSignUp';
+import PageSignUp from './components/SignUp';
 import { useTheme } from '@material-ui/core';
 import PageManga from './routes/PageManga';
+import PageOwl from './components/mangaowl';
+import PageEditor from './components/editor';
+import PageBookmarks from './components/bookmark';
 
 function App() {
 
@@ -18,11 +22,15 @@ function App() {
 		<Switch>
 			<Route path="/" exact component={PageHome} />
 			<Route path="/manga" exact component={PageManga} />
+			<Route path="/editor" exact component={PageEditor} />
+			<Route path="/mangaowl" exact component={PageOwl} />
+			<Route path="/bookmarks" exact component={PageBookmarks} />
 			<Route path="/project/:projectId/" exact component={PageProjects} />
 			<Route path="/project/:projectId/v/:versionId/" component={PageVersion} />
 			<Route path="/login" component={PageLogin} />
 			<Route path="/sign-up" component={PageSignUp} />
-			<Route path="/profile/:username" component={PageProfile} />
+			<Route path="/profile/" component={PageProfile} />
+			{/* <Route path="/profile/" component={PageProfile} /> */}
 		</Switch>
 	);
 	// }

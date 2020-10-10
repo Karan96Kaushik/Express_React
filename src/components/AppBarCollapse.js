@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import { Button, MenuItem, useTheme } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import ButtonAppBarCollapse from "./ButtonAppBarCollapse";
+import ButtonAppBarCollapse from "./ButtonAppBarCollapse2";
 
 import NotificationIcon from "@material-ui/icons/Notifications";
 import Home from "@material-ui/icons/Home";
@@ -15,7 +15,9 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { DashboardIcon, ProjectIcon, CalendarIcon, CommunityIcon, HomeIcon } from "./CustomIcons";
 import { Switch } from "@material-ui/core"
-import { darkTheme, lightTheme, ThemeContext } from "./Theme";
+import { ThemeContext } from "./Theme";
+import { NavBarContext } from "../myContext"
+import MenuIcon from "@material-ui/icons/Menu";
 
 const styles = theme => ({
 	root: {
@@ -70,16 +72,19 @@ const styles = theme => ({
 		// fontSize: '14px',
 		color: theme.palette.primary.light,
 		cursor: 'pointer'
-	}
+	},
+	MenuButton : {
+        // color : "red",
+        color : theme.palette.background.primary.light,
+        fontSize : "35px",
+      },
 });
 
 
 const AppBarCollapse = props => {
-	const handleToggleNotification = () => {
-		setNotificationOpen(!notificationOpen);
-	};
 
 	var themeContext = useContext(ThemeContext)
+	const NavContext = useContext(NavBarContext)
 
 	const notificationButton = useRef();
 	const [notificationOpen, setNotificationOpen] = useState(false);
@@ -90,15 +95,18 @@ const AppBarCollapse = props => {
 	const theme = useTheme();
 
 	var links = [
-		{ label: "Home", icon: <HomeIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
-		{ label: "Community", icon: <CommunityIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
-		{ label: "Dashboard", icon: <DashboardIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
-		{ label: "Project", icon: <ProjectIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
-		{ label: "Calendar", icon: <CalendarIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
+		// { label: "Home", icon: <HomeIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
+		// { label: "Community", icon: <CommunityIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
+		// { label: "Dashboard", icon: <DashboardIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
+		// { label: "Project", icon: <ProjectIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
+		// { label: "Calendar", icon: <CalendarIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> },
 	]
 
 	return (
 		<div className={props.classes.root}>
+			<IconButton onClick={() => NavContext.setNavOpen(!NavContext.NavOpen)}>
+				<MenuIcon className={props.classes.MenuButton} />
+			</IconButton>
 			<ButtonAppBarCollapse>
 				<IconButton className={props.classes.icon} onClick="" buttonRef="">
 					<Home className={props.classes.buttonColor} />
@@ -138,15 +146,9 @@ const AppBarCollapse = props => {
 					</IconButton>
 					<Typography variant="body2" className={props.classes.IconLabel}>{link.label}</Typography>
 				</div>))}
-				<div className={props.classes.menuItemContainer}>
-					<Switch
-						checked={themeContext.theme.dark}
-						onChange={(val) => { themeContext.setTheme({ dark: val.target.checked }) }}
-						name="checkedB"
-						color="primary"
-					/>
-				</div>
+
 			</div>
+			{/* <IconButton onClick={() => {NavContext.setNavOpen(!NavContext.NavOpen)}} ><HomeIcon className={props.classes.headerIcon} fillColor={theme.palette.primary.light} /> </IconButton> */}
 		</div>
 	);
 };

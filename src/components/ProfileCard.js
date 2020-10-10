@@ -154,49 +154,29 @@ const styles = theme => ({
 	},
 	aboutText: {
 		textAlign: 'left',
-		padding: '12px 16px',
+		padding: '50px 20px',
 		justifyContent: 'space-between',
 		textAlign: 'center',
 	},
-	about: {
-		fontSize: '12px',
-		fontWeight: '400',
-		// color: '#283e4a',
-	}
 });
 
-const ProfileCard = ({ classes, displayName, username, avatarUrl, profileUrl, coverUrl, stats }) => {
+const ProfileCard = ({ classes, displayName, tags, username, avatarUrl, description, profileUrl, coverUrl, stats }) => {
 	const backgroundStyle = coverUrl
 		? { backgroundImage: `url('${coverUrl}')` }
 		: null;
 
 	const theme = useTheme();
 
-	var tags = ["Web Developer", "Content Writer", "CEO", "Digital Marketing", "Marketing"]
 
 	return (
 		<Paper elevation={1} className={classes.root} spacing={3} style={{ margin: '0px 8px' }}>
 
-			<div className={classes.header} style={{ backgroundImage: `url('/assets/images/left-prof-bg@2x.jpg')` }} />
+			<div className={classes.header} style={{ backgroundImage: `url('/assets/images/c24be8b914079df7aad2e3fb267d40f7.jpg')` }} />
 			<div className={classes.content}>
-				{/* <Link to={profileUrl}> */}
 				<Avatar className={classes.avatar} src={avatarUrl} />
-				{/* </Link> */}
-
-				{/* <div className={classes.userFields}>
-								<Typography variant="h6">
-									<Link to={profileUrl}>{displayName}</Link>
-								</Typography>
-								<Typography variant="body2" color="textSecondary">
-									<Link to={profileUrl}>@{username}</Link>
-								</Typography>
-							</div> */}
 			</div>
-			{/* <Button className={classes.button} size="small" variant="contained" color="primary">
-								Add Contanct
-						</Button> */}
-			
-			<p className={classes.userName}> <Typography variant="h6" color="primary">{displayName}</Typography></p>
+
+			<p className={classes.userName}><Link to={profileUrl}> <Typography variant="h6" color="primary">{displayName}</Typography> </Link> </p>
 			{/* <DropDown /> */}
 			<div className={classes.orgDetails}>
 				<div>
@@ -207,7 +187,7 @@ const ProfileCard = ({ classes, displayName, username, avatarUrl, profileUrl, co
 				<Typography color="primary">
 					<div className={classes.orgContent}>
 						<p className={classes.orgHead}>Organisation</p>
-						<p className={classes.orgName}>Ikriya Learning LLC, Orlando</p>
+						<p className={classes.orgName}>SGS Weather (Aug 2018 - Present)</p>
 					</div>
 				</Typography>
 			</div>
@@ -226,41 +206,8 @@ const ProfileCard = ({ classes, displayName, username, avatarUrl, profileUrl, co
 			</Typography>
 			<div className={classes.aboutText}>
 				{/* <Typography variant="h6">{posts}</Typography> */}
-				<Typography variant="caption" color="secondary" className={classes.about}>"Experienced web designer with a demonstrated history of working in the information technologyu & services industry"</Typography>
+				<Typography variant="body1" color="secondary" className={classes.about}>{description}</Typography>
 			</div>
-			<Typography className={classes.editProfile} color="primary">
-				<Link variant='inherit' href="#" className={classes.editProfileLink}>
-					<span className={classes.editText}>Edit Profile</span>
-					<span className={classes.editIcon}>
-						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><g><g><path fill={theme.palette.primary.main} d="M9.838 2.246a.553.553 0 0 0 0-.784l-1.3-1.3a.553.553 0 0 0-.784 0L6.738 1.18 8.82 3.262zM0 7.917V10h2.083l6.144-6.144-2.083-2.083z" /></g></g></svg>
-					</span>
-				</Link>
-			</Typography>
-			{/* <ProfileStats
-				posts={stats.posts}
-				followers={stats.followers}
-				following={stats.following}
-			/> */}
-			{/* <div className={classes.workInterest}>
-								<p className={classes.work}>Product Development</p>
-								<p className={classes.work}>Engineering Product</p>
-							</div>
-							<div className={classes.versions}>
-								<p className={classes.head}>Total Versions</p>
-								<p className={classes.count}>03</p>
-							</div>
-							<div className={classes.keywords}>
-								<p className={classes.head}>Keywords</p>
-								<p className={classes.count}>04</p>
-							</div> */}
-			{/* <div className={classes.premiumMembership}>
-								<Typography className={classes.premiumAdvantages}>
-									Access exclusive tools and insights
-								</Typography>
-								<Typography className={classes.premiumFees}>
-									Try Premium free for 1 month
-								</Typography>
-							</div> */}
 		</Paper>
 	);
 };

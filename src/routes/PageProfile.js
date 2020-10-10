@@ -185,20 +185,25 @@ const styles = theme => ({
   }
 });
 
+var tags = ["ReactJS","NodeJS","REST API","GraphQL API","MongoDB","PostgreSQL","Graph Databases","AWS EC2","AWS Lambda","Docker","IoT"]
+var description = "Versatile full stack developer with 2.5 years of experience with web design, development and deployment. Working with various client and server side technologies"
+
 const PageProfile = ({ classes }) => (
   <Layout>
     <ProfileCard
-        displayName="Paul Nta"
-        username="paulnta"
-        avatarUrl="https://source.unsplash.com/collection/895539"
-        profileUrl="/profile/paulnta"
-        coverUrl="https://source.unsplash.com/collection/841904"
-        stats={{
-          posts: 112,
-          followers: 234,
-          following: 22
-        }}
-      />
+								tags={tags}
+                displayName="Karan Kaushik"
+                description={description}
+								username=""
+								avatarUrl="/deathnote.jpg"
+								profileUrl="/profile/"
+								coverUrl="https://source.unsplash.com/collection/841904"
+								stats={{
+									posts: 112,
+									followers: 234,
+									following: 22
+								}}
+							/>
   </Layout>
 );
 
