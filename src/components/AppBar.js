@@ -112,7 +112,7 @@ const AppBar = ({ classes }) => {
 						horizontal: 'center',
 					}}
 				>
-					<List>
+					{/* <List>
 						<ActivityListItem
 							title="Anna commented your post"
 							subtitle="1 hour ago"
@@ -133,9 +133,16 @@ const AppBar = ({ classes }) => {
 							subtitle="1 week ago"
 							avatarUrl="https://source.unsplash.com/d2MSDujJl2g/150x150"
 						/>
-					</List>
+					</List> */}
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
+
 				</Popover>
-				<Avatar className={classes.icon} src="https://source.unsplash.com/collection/895539" />
+				<Avatar className={classes.icon} src="/assets/images/ava.jpeg" />
 			</Toolbar>
 		</AppBarBase>
 	);

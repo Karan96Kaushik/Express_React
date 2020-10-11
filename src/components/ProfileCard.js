@@ -15,7 +15,7 @@ const styles = theme => ({
 		textAlign: 'center',
 	},
 	header: {
-		height: 100,
+		height: 120,
 		background: theme.palette.background.primary.main,
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover'
@@ -161,17 +161,13 @@ const styles = theme => ({
 });
 
 const ProfileCard = ({ classes, displayName, tags, username, avatarUrl, description, profileUrl, coverUrl, stats }) => {
-	const backgroundStyle = coverUrl
-		? { backgroundImage: `url('${coverUrl}')` }
-		: null;
-
+	const backgroundStyle = coverUrl ? { backgroundImage: `url('${coverUrl}')` } : null;
 	const theme = useTheme();
-
 
 	return (
 		<Paper elevation={1} className={classes.root} spacing={3} style={{ margin: '0px 8px' }}>
 
-			<div className={classes.header} style={{ backgroundImage: `url('/assets/images/c24be8b914079df7aad2e3fb267d40f7.jpg')` }} />
+			<div className={classes.header} style={{ backgroundImage: `url('/assets/images/red_glow.jpg')` }} />
 			<div className={classes.content}>
 				<Avatar className={classes.avatar} src={avatarUrl} />
 			</div>

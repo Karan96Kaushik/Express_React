@@ -120,26 +120,6 @@ const PageHome = ({ classes }) => {
 	<Layout>
 		<Grid container spacing={3}>
 			<Grid item xs={12} md={3}>
-				{/* <aside className={classes.profile}> 
-					<Grid container xs="auto" spacing={1}>
-						<Grid item xs="12" spacing={3}>
-							<ProfileCard
-								tags={tags}
-								displayName="Karan Kaushik"
-								username=""
-								avatarUrl="/deathnote.jpg"
-								profileUrl="/profile/"
-								description={description}
-								coverUrl="https://source.unsplash.com/collection/841904"
-								stats={{
-									posts: 112,
-									followers: 234,
-									following: 22
-								}}
-							/>
-						</Grid>
-					</Grid>
-				</aside>*/}
 			</Grid>
 
 			<Grid item xs={12} md={6}>
