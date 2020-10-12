@@ -187,7 +187,7 @@ const styles = theme => ({
 	}
 });
 
-var tags = ["ReactJS", "NodeJS", "REST API", "GraphQL API", "MongoDB", "PostgreSQL", "Graph Databases", "AWS EC2", "AWS Lambda", "Docker", "IoT"]
+var tags = ["ReactJS", "NodeJS", "REST API", "GraphQL API", "MongoDB", "PostgreSQL", "Graph Databases", "AWS EC2", "AWS Lambda","Apach2","NGINX","Linux", "Docker", "IoT"]
 var description = "Versatile full stack developer with 2.5 years of experience with web design, development and deployment. Working with various client and server side technologies"
 
 const PageProfile = ({ classes }) => (
@@ -195,6 +195,7 @@ const PageProfile = ({ classes }) => (
 		<Grid container spacing={3}>
 			<Grid item xs={12} md={2}></Grid>
 			<Grid item xs={12} md={8}>
+				
 				<ProfileCard
 					tags={tags}
 					displayName="Karan Kaushik"
@@ -204,7 +205,9 @@ const PageProfile = ({ classes }) => (
 					profileUrl="/profile/"
 					coverUrl="/assets/images/ava.jpeg"
 				/>
+
 				<SkillD3 />
+
 			</Grid>
 			<Grid item xs={12} md={2}></Grid>
 		</Grid>

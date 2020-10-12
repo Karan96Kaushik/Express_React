@@ -96,56 +96,56 @@ const styles = theme => ({
 		flex: 1,
 	},
 	ryuk: {
-        // minWidth: '700px',
-        display:"flex",
-        justifyContent:"center",
-    },
+		// minWidth: '700px',
+		display: "flex",
+		justifyContent: "center",
+	},
 });
 
 const PageHome = ({ classes }) => {
-	
-	var tags = ["ReactJS","NodeJS","REST API","GraphQL API","MongoDB","PostgreSQL","Graph Databases","AWS EC2","AWS Lambda","Docker","IoT"]
+
+	var tags = ["ReactJS", "NodeJS", "REST API", "GraphQL API", "MongoDB", "PostgreSQL", "Graph Databases", "AWS EC2", "AWS Lambda", "Docker", "IoT"]
 	var description = "Versatile full stack developer with 2.5 years of experience with web design, development and deployment. Working with various client and server side technologies"
 
 	var tabs = [
-        { label: "Start a post", icon: <StartPostIcon fontSize="large" />, panel:<div></div> },
-        { label: "Project Owner", icon: <ProjectOwnerIcon fontSize="large" />, panel:<ProjectView /> },
-        { label: "Team Messages", icon: <TeamMessageIcon fontSize="large" />, panel:<TeamMessage /> },
-        { label: "Feed", icon: <FeedIcon fontSize="large" />, panel:<div></div> },
-        { label: "Notification", icon: <NotificationIcon fontSize="large" />, panel:<Notification /> },
-        { label: "Todo's", icon: <TodoIcon fontSize="large" />, panel:<div></div> },
+		{ label: "Start a post", icon: <StartPostIcon fontSize="large" />, panel: <div></div> },
+		{ label: "Project Owner", icon: <ProjectOwnerIcon fontSize="large" />, panel: <ProjectView /> },
+		{ label: "Team Messages", icon: <TeamMessageIcon fontSize="large" />, panel: <TeamMessage /> },
+		{ label: "Feed", icon: <FeedIcon fontSize="large" />, panel: <div></div> },
+		{ label: "Notification", icon: <NotificationIcon fontSize="large" />, panel: <Notification /> },
+		{ label: "Todo's", icon: <TodoIcon fontSize="large" />, panel: <div></div> },
 	]
-	
+
 	return (
-	<Layout>
-		<Grid container spacing={3}>
-			<Grid item xs={12} md={3}>
+		<Layout>
+			<Grid container spacing={3}>
+				<Grid item xs={12} md={3}>
+				</Grid>
+
+				<Grid item xs={12} md={6}>
+					<div className={classes.ryuk}>
+						<Link to={"/profile/"}>
+							<picture>
+								<source srcset="/react/giphy1.webp" type="image/webp" />
+								<source srcset='\react\giphy1.jpg' type="image/jpeg" />
+								<img
+									src="/react/giphy1.webp"
+									style={{
+										width: '12em', /* width of container */
+									}}
+								/>
+							</picture>
+						</Link>
+						<br />
+						<div>
+
+						</div>
+					</div>
+				</Grid>
+
 			</Grid>
-
-			<Grid item xs={12} md={6}>
-			<div className={classes.ryuk}>
-				<Link to={"/profile/"}>
-				<picture>
-				<source srcset="/react/giphy1.webp" type="image/webp" />
-				<source srcset='\react\comic.png' type="image/jpeg" />
-				<img
-					src="/react/giphy1.webp"
-					style={{
-						width: '12em', /* width of container */
-					}}
-				/>
-				</picture>
-				</Link>
-				<br />
-				<div>
-
-				</div>
-			</div>
-			</Grid>
-
-		</Grid>
-	</Layout>
-)
+		</Layout>
+	)
 };
 
 PageHome.propTypes = {
