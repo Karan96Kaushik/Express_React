@@ -26,9 +26,9 @@ var description = "Versatile full stack developer with 2.5 years of experience w
 var data = [
 	{
 		"category": "Experience (% of career)",
-		"NodeJS": 60,
-		"ReactJS": 10,
-		"PostgreSQL": 60,
+		"NodeJS": 100,
+		"ReactJS": 20,
+		"PostgreSQL": 80,
 		"IoT": 100,
 	},
 	{
@@ -39,7 +39,7 @@ var data = [
 		"IoT": 50,
 	},
 	{
-		"category": "Skill (Self)",
+		"category": "Skill (Self Rated)",
 		"NodeJS": 70,
 		"ReactJS": 20,
 		"PostgreSQL": 60,
