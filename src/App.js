@@ -9,7 +9,7 @@ import PageSignUp from './components/SignUp';
 import { useTheme } from '@material-ui/core';
 import PageManga from './routes/PageManga';
 import PageOwl from './components/mangaowl';
-import PageEditor from './components/editor';
+import PageEditor from './routes/PageEditor';
 import PageBookmarks from './components/bookmark';
 import PageD3 from './routes/PageD3';
 
