@@ -16,15 +16,23 @@ import Notification from "../views/notifications/notifications";
 import ProjectView from "../views/project-view/ProjectView";
 import VarialbleListView from "../views/project-view/VarialbleListView2";
 import { Link } from "react-router-dom";
+import MUIRichTextEditor from 'mui-rte'
+import { Paper } from "@material-ui/core";
 
 const styles = theme => ({
 	count: {
 		marginRight: "15px"
 	},
 	root: {
-		// minWidth: '700px',
-		// background: theme.palette.background.secondary.main,
-		// minWidth: '100%'
+		overflow: 'visible',
+		// margin: theme.spacing.unit * 1,
+		background: theme.palette.background.secondary.main,
+		// textAlign: 'center',
+		color: theme.palette.secondary.dark,
+		height: "auto",
+		padding: "50px",
+		paddingBottom: "150px",
+		margin: "50px",
 	},
 	summaryList: {
 		display: 'flex',
@@ -96,72 +104,34 @@ const styles = theme => ({
 		flex: 1,
 	},
 	ryuk: {
-        // minWidth: '700px',
-        display:"flex",
-        justifyContent:"center",
-    },
+		// minWidth: '700px',
+		display: "flex",
+		justifyContent: "center",
+	},
 });
 
 const PageHome = ({ classes }) => {
-	
-	var tags = ["ReactJS","NodeJS","REST API","GraphQL API","MongoDB","PostgreSQL","Graph Databases","AWS EC2","AWS Lambda","Docker","IoT"]
-	var description = "Versatile full stack developer with 2.5 years of experience with web design, development and deployment. Working with various client and server side technologies"
 
-	var tabs = [
-        { label: "Start a post", icon: <StartPostIcon fontSize="large" />, panel:<div></div> },
-        { label: "Project Owner", icon: <ProjectOwnerIcon fontSize="large" />, panel:<ProjectView /> },
-        { label: "Team Messages", icon: <TeamMessageIcon fontSize="large" />, panel:<TeamMessage /> },
-        { label: "Feed", icon: <FeedIcon fontSize="large" />, panel:<div></div> },
-        { label: "Notification", icon: <NotificationIcon fontSize="large" />, panel:<Notification /> },
-        { label: "Todo's", icon: <TodoIcon fontSize="large" />, panel:<div></div> },
-	]
-	
+	var defVal = { "blocks": [{ "key": "ajct2", "text": "sdasadsda", "type": "unstyled", "depth": 0, "inlineStyleRanges": [], "entityRanges": [], "data": {} }], "entityMap": {} }
+
+	var handleSave = (data) => {
+		console.log(data)
+	}
 	return (
-	<Layout>
-		<Grid container spacing={3}>
-			<Grid item xs={12} md={3}>
-				{/* <aside className={classes.profile}> 
-					<Grid container xs="auto" spacing={1}>
-						<Grid item xs="12" spacing={3}>
-							<ProfileCard
-								tags={tags}
-								displayName="Karan Kaushik"
-								username=""
-								avatarUrl="/deathnote.jpg"
-								profileUrl="/profile/"
-								description={description}
-								coverUrl="https://source.unsplash.com/collection/841904"
-								stats={{
-									posts: 112,
-									followers: 234,
-									following: 22
-								}}
-							/>
-						</Grid>
-					</Grid>
-				</aside>*/}
+		<Layout>
+			<Grid container spacing={3}>
+				<Grid item xs={12} md={2}></Grid>
+				<Grid item xs={12} md={8}>
+
+					<Paper elevation={1} className={classes.root} spacing={3} style={{ margin: '0px 8px' }}>
+						<MUIRichTextEditor defaultValue={JSON.stringify(defVal)} onSave={handleSave} label="Start typng..." />
+					</Paper>
+
+				</Grid>
+				<Grid item xs={12} md={2}></Grid>
 			</Grid>
-
-			<Grid item xs={12} md={6}>
-			<div className={classes.ryuk}>
-				<Link to={"/profile/"}>
-				<img
-					src="/react/giphy1.webp"
-					style={{
-						width: '12em', /* width of container */
-					}}
-				/>
-				</Link>
-				<br />
-				<div>
-
-				</div>
-			</div>
-			</Grid>
-
-		</Grid>
-	</Layout>
-)
+		</Layout>
+	)
 };
 
 PageHome.propTypes = {

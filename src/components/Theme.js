@@ -77,10 +77,11 @@ const darkTheme = createMuiTheme({
 		primary: {
 			main: seaNgrass["Tea Green"],
 			light: seaNgrass["Tea Green"],
-			// default: red[100]
+				// default: red[100]
 		},
 		secondary: {
 			main: seaNgrass["Eton Blue"],
+			dark: seaNgrass["CharcoalDark"],
 			// default: red[100]
 		},
 		background: {
