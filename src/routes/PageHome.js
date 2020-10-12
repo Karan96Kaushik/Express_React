@@ -125,12 +125,16 @@ const PageHome = ({ classes }) => {
 			<Grid item xs={12} md={6}>
 			<div className={classes.ryuk}>
 				<Link to={"/profile/"}>
+				<picture>
+				<source srcset="/react/giphy1.webp" type="image/webp" />
+				<source srcset='\react\comic.png' type="image/jpeg" />
 				<img
 					src="/react/giphy1.webp"
 					style={{
 						width: '12em', /* width of container */
 					}}
 				/>
+				</picture>
 				</Link>
 				<br />
 				<div>

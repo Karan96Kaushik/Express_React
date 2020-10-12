@@ -6,17 +6,18 @@ import { Paper } from "@material-ui/core";
 
 const styles = theme => ({
     root: {
-		overflow: 'hidden',
+		overflow: 'visible',
 		// margin: theme.spacing.unit * 1,
 		background: theme.palette.background.secondary.main,
 		// textAlign: 'center',
 		color:theme.palette.secondary.dark,
 	},
 	d3: {
-		height: "500px",
+		height: "650px",
+		// paddingTop:"50px",
+		// paddingBottom:"50px",
+		margin:"20px",
 		overflow: "visible"
-		// padding:"50px",
-		// margin:"50px",
 	},
 });
 
