@@ -28,104 +28,23 @@ import Btn from '../components/mui_button';
 import Inp from '../components/mui_input';
 import Combo from '../components/search';
 import swal from 'sweetalert';
-import { Typography } from "@material-ui/core";
+import { Paper, Typography } from "@material-ui/core";
 
 const styles = theme => ({
-    count: {
-        marginRight: "15px"
-    },
     root: {
-        // minWidth: '700px',
+        overflow: 'visible',
+        // margin: theme.spacing.unit * 1,
+        background: theme.palette.background.secondary.main,
         textAlign: 'center',
-        minWidth: '100%',
-    },
-
-    summaryList: {
-        display: 'flex',
-        justifyContent: 'space-between'
-    },
-    Listtitle: {
-        fontSize: '15px',
-        fontWeight: '500px',
-        color: '#0073b1',
-        display: 'flex',
-        justifyContent: 'center',
-    },
-    summaryText: {
-        fontSize: '12px',
-        fontWeight: '500',
-        color: 'rgba(0, 0, 0, 0.6)',
-    },
-    summaryCount: {
-        fontSize: '12px',
-        fontWeight: '500',
-        color: '#0073b1',
-    },
-    expandListItems: {
-        borderTop: '2px solid #efefef',
-        padding: '10px 0 0 0',
-        margin: '10px 0 0 0'
-    },
-    listItem: {
-        display: 'flex',
-        justifyContent: 'space-between',
-
-    },
-    expandListTitle: {
-        fontSize: '14px',
-        fontWeight: '400',
-        color: '#283e4a',
-    },
-    newsCard: {
-        marginTop: '10px'
-    },
-    newsTitle: {
-        display: 'flex',
-        justifyContent: 'center',
-        fontSize: '15px',
-        fontWeight: '400',
-        color: '#0073b1'
-    },
-    newsContent: {
-        fontWeight: '400',
-        color: '#707070',
-        fontSize: '14px'
-    },
-    projectToolCard: {
-        marginTop: '10px'
-    },
-    projectToolTitle: {
-        display: 'flex',
-        justifyContent: 'center',
-        fontSize: '15px',
-        fontWeight: '400',
-        color: '#0073b1'
-    },
-    projectToolContent: {
-        fontWeight: '400',
-        color: '#707070',
-        fontSize: '14px'
-    },
-    aside: {
-        width: '100%',
-    },
-    profile: {
-        width: '100%',
-    },
-    rightSide: {
-        width: '100%'
-    },
-    main: {
-        width: '100%',
-        flex: 1,
-    },
-    ryuk: {
+        color: theme.palette.secondary.dark,
         display: "flex",
+        flexDirection: "column",
         justifyContent: "space-around",
         alignItems: "center",
-        flexDirection:"column",
-        height:"300px",
-        // flexDirection:"row",
+        margin: "auto",
+        marginTop: "50px",
+        padding: "50px",
+        width: "75%",
     },
 });
 
@@ -173,32 +92,24 @@ const PageProject = ({ classes, props }) => {
         <Layout>
             <Grid container spacing={3}>
 
-                <Grid item xs={12} md={3}>
-                </Grid>
+                <Grid item xs={12} md={3}></Grid>
 
                 <Grid item xs={12} md={6}>
-                    <div>
-                        <div className={classes.ryuk}>
-						<Typography variant="h3" color="primary">Manga Downloader</Typography>
-                            <Inp
-                                _onChange={_changed}
-                                _label="Link"
-                            />
-                            <Btn
-                                _onClick={_downlaod}
-                                // _onFocus={_downlaod}
-                                _text={'Download'}
-                            />
-                            <a href='http://creepyfuck.tech/Manga/'>
-                                <div>
-                                    <img alt='Open Comics' src='/react/comic.png' height='50px' />
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <br />
-                    </div>
+                    <Paper elevation={1} className={classes.root} spacing={3}>
+                        <Typography variant="h4" color="primary">Manga Downloader</Typography>
+                        <Inp
+                            _onChange={_changed}
+                            _label="Link"
+                        />
+                        <Btn
+                            _onClick={_downlaod}
+                            // _onFocus={_downlaod}
+                            _text={'Download'}
+                        />
+                        <a href='http://creepyfuck.tech/Manga/'>
+                            <img alt='Open Comics' src='/react/comic.png' style={{ margin: "20px" }} height='50px' />
+                        </a>
+                    </Paper>
                 </Grid>
 
                 <Grid item xs={12} md={3}>

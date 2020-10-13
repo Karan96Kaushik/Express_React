@@ -165,7 +165,7 @@ const ProfileCard = ({ classes, displayName, tags, username, avatarUrl, descript
 	const theme = useTheme();
 
 	return (
-		<Paper elevation={1} className={classes.root} spacing={3} style={{ margin: '0px 8px' }}>
+		<Paper elevation={1} spacing={3} className={classes.root}>
 
 			<div className={classes.header} style={{ backgroundImage: `url('/assets/images/red_glow.jpg')` }} />
 			<div className={classes.content}>

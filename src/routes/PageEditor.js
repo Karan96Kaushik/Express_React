@@ -112,7 +112,7 @@ const styles = theme => ({
 
 const PageHome = ({ classes }) => {
 
-	var defVal = { "blocks": [{ "key": "ajct2", "text": "sdasadsda", "type": "unstyled", "depth": 0, "inlineStyleRanges": [], "entityRanges": [], "data": {} }], "entityMap": {} }
+	var defVal = { "blocks": [{ "key": "ajct2", "text": "My Editor...", "type": "unstyled", "depth": 0, "inlineStyleRanges": [], "entityRanges": [], "data": {} }], "entityMap": {} }
 
 	var handleSave = (data) => {
 		console.log(data)

@@ -10,38 +10,28 @@ import swal from 'sweetalert';
 import { Line, Circle } from 'rc-progress';
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 // import classes from '*.module.css';
 
 const styles = theme => ({
     root: {
-        backgroundColor: theme.palette.background.primary.dark
-    },
-    mainDiv: {
-        paddingTop: "50px",
-        margin: "70px",
+        overflow: 'visible',
+        // margin: theme.spacing.unit * 1,
+        background: theme.palette.background.secondary.main,
+        // textAlign: 'center',
+        color: theme.palette.secondary.dark,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
         alignItems: "center",
-        height: "300px",
-        alignContent: "center",
+        margin: "auto",
+        marginTop: "100px",
+        padding: "50px",
+        width: "75%",
     },
     items: {
         margin: "15px",
         width: "100%",
-    },
-    buttonCollapse: {
-        [theme.breakpoints.up("sm")]: {
-            display: "none"
-        },
-        margin: "5px",
-        boxShadow: "none",
-        marginRight: "10px",
-    },
-    MenuButton: {
-        color: theme.palette.background.primary.light,
-        fontSize: "35px",
     },
 });
 
@@ -244,8 +234,8 @@ class App extends Component {
                 <Grid container>
                     <Grid item xs={12} md={3}></Grid>
                     <Grid item xs={12} md={6}>
-                        <div className={this.props.classes.mainDiv}>
-						<Typography variant="h3" color="primary">Manga Owl</Typography>
+                        <Paper elevation={1} className={this.props.classes.root} spacing={3}>
+                            <Typography variant="h4" color="primary">Manga Owl</Typography>
                             <AsyncSelect className={this.props.classes.items} label="Search Manga" cacheOptions defaultOptions loadOptions={this.promiseOptions} onChange={this.selected_anime} />
                             <Select className={this.props.classes.items} label="Select Chapter" options={this.state.options} onChange={this.selected_chap} />
                             <Btn
@@ -274,9 +264,9 @@ class App extends Component {
                                 </div>
                             ))}
                             <a href='http://creepyfuck.tech/Manga/'>
-                                <img alt='Open Comics' src='/react/comic.png' height='80px' />
+                                <img alt='Open Comics' src='/react/comic.png' height='80px' style={{margin:"20px"}} />
                             </a>
-                        </div>
+                        </Paper>
                     </Grid>
                     <Grid item xs={12} md={3}></Grid>
                 </Grid>

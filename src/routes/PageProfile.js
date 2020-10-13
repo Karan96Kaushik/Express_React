@@ -205,7 +205,6 @@ const PageProfile = ({ classes }) => (
 					profileUrl="/profile/"
 					coverUrl="/assets/images/ava.jpeg"
 				/>
-
 				<SkillD3 />
 
 			</Grid>

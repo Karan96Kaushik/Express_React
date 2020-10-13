@@ -13,37 +13,24 @@ import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 
 import { withStyles } from "@material-ui/core/styles";
-import { Typography } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 
 const styles = theme => ({
-    root: {
-        backgroundColor: theme.palette.background.primary.dark
-    },
-    mainDiv: {
-        paddingTop: "50px",
-        margin: "50px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-around",
-        alignItems: "center",
-        height: "300px",
-        alignContent: "center",
-    },
-    items: {
-        width: "100%",
-    },
-    buttonCollapse: {
-        [theme.breakpoints.up("sm")]: {
-            display: "none"
-        },
-        margin: "5px",
-        boxShadow: "none",
-        marginRight: "10px",
-    },
-    MenuButton: {
-        color: theme.palette.background.primary.light,
-        fontSize: "35px",
-    },
+	root: {
+		overflow: 'visible',
+		// margin: theme.spacing.unit * 1,
+		background: theme.palette.background.secondary.main,
+		// textAlign: 'center',
+		color: theme.palette.secondary.dark,
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "space-around",
+		alignItems: "center",
+		margin: "auto",
+		marginTop: "100px",
+		padding: "50px",
+		width: "75%",
+	},
 });
 
 class App extends Component {
@@ -139,43 +126,40 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state)
-
 		return (
+			<div>
+				<Grid container>
+					<Grid item xs={12} md={4}></Grid>
+					<Grid item xs={12} md={4}>
+						<Paper elevation={1} className={this.props.classes.root} spacing={3}>
+							<Typography variant="h4" color="primary">Bookmarks</Typography>
+							<Inp
+								_value={this.state._bm_name}
+								_onChange={this._changed_name}
+								_label={'Name'}
+							/>
+							<Inp
+								_value={this.state._bm_val}
+								_onChange={this._changed_val}
+								_label={'Link'}
+							/>
+							<Btn
+								_onClick={this._add}
+								_text={'Add'}
+							/>
+							<List>
+								{this.state.list.map((bookmark) => (
+									<ListItem button style={{ color: 'white', textSecondary: 'red' }} onClick={() => this.handleListItemClick(bookmark)} key={bookmark}>
+										<ListItemText secondary={bookmark.link} primary={bookmark.name} secondaryTypographyProps={{ color: 'secondary' }} />
+									</ListItem>
+								))}
+							</List>
+						</Paper>
+					</Grid>
+					<Grid item xs={12} md={4}></Grid>
+				</Grid>
+			</div>
 
-            <div>
-                <Grid container>
-                    <Grid item xs={12} md={3}></Grid>
-                    <Grid item xs={12} md={6}>
-                        <div className={this.props.classes.mainDiv}>
-						<Typography variant="h3" color="primary">Bookmarks</Typography>
-                        <Inp
-							_value={this.state._bm_name}
-							_onChange={this._changed_name}
-							_label={'Name'}
-						/>
-						<Inp
-							_value={this.state._bm_val}
-							_onChange={this._changed_val}
-							_label={'Link'}
-						/>
-						<Btn
-							_onClick={this._add}
-							_text={'Add'}
-						/>
-						<List>
-							{this.state.list.map((bookmark) => (
-								<ListItem button style={{ color: 'white', textSecondary: 'red' }} onClick={() => this.handleListItemClick(bookmark)} key={bookmark}>
-									<ListItemText secondary={bookmark.link} primary={bookmark.name} secondaryTypographyProps={{ color: 'secondary' }} />
-								</ListItem>
-							))}
-						</List>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} md={3}></Grid>
-                </Grid>
-            </div>
-    
 		);
 	}
 }

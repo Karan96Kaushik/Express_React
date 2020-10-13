@@ -103,19 +103,6 @@ const styles = theme => ({
 });
 
 const PageHome = ({ classes }) => {
-
-	var tags = ["ReactJS", "NodeJS", "REST API", "GraphQL API", "MongoDB", "PostgreSQL", "Graph Databases", "AWS EC2", "AWS Lambda", "Docker", "IoT"]
-	var description = "Versatile full stack developer with 2.5 years of experience with web design, development and deployment. Working with various client and server side technologies"
-
-	var tabs = [
-		{ label: "Start a post", icon: <StartPostIcon fontSize="large" />, panel: <div></div> },
-		{ label: "Project Owner", icon: <ProjectOwnerIcon fontSize="large" />, panel: <ProjectView /> },
-		{ label: "Team Messages", icon: <TeamMessageIcon fontSize="large" />, panel: <TeamMessage /> },
-		{ label: "Feed", icon: <FeedIcon fontSize="large" />, panel: <div></div> },
-		{ label: "Notification", icon: <NotificationIcon fontSize="large" />, panel: <Notification /> },
-		{ label: "Todo's", icon: <TodoIcon fontSize="large" />, panel: <div></div> },
-	]
-
 	return (
 		<Layout>
 			<Grid container spacing={3}>

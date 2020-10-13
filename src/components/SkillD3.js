@@ -55,13 +55,13 @@ const PageD3 = ({ classes }) => {
 
 	return (
 		<Paper elevation={1} className={classes.root} spacing={3} style={{ margin: '0px 8px' }}>
-		<div className={classes.d3}>
-			<NivoRadar
-				keys={keys}
-				index={index}
-				data={data}
-			/>
-		</div>
+			<div className={classes.d3}>
+				<NivoRadar
+					keys={keys}
+					index={index}
+					data={data}
+				/>
+			</div>
         </Paper>
 	)
 };
