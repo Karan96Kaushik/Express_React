@@ -1,4 +1,4 @@
-import '@progress/kendo-theme-default/dist/all.css';
+// import '@progress/kendo-theme-default/dist/all.css';
 import React, { Component } from 'react';
 // import './style.css';
 //import Combo from './search'

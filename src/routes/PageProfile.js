@@ -187,7 +187,7 @@ const styles = theme => ({
 	}
 });
 
-var tags = ["ReactJS", "NodeJS", "REST API", "GraphQL API", "MongoDB", "PostgreSQL", "Graph Databases", "AWS EC2", "AWS Lambda","Apach2","NGINX","Linux", "Docker", "IoT"]
+var tags = ["ReactJS", "NodeJS", "REST API", "GraphQL API", "MongoDB", "PostgreSQL", "Graph Databases", "AWS EC2", "AWS Lambda","Apach2","NGINX","Linux", "Docker", "IoT", "MySQL", "Redis", "MQTT/TCP"]
 var description = "Versatile full stack developer with 2.5 years of experience with web design, development and deployment. Working with various client and server side technologies"
 
 const PageProfile = ({ classes }) => (

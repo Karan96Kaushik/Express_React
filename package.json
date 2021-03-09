@@ -10,19 +10,9 @@
     "@material-ui/lab": "^4.0.0-alpha.52",
     "@nivo/line": "^0.62.0",
     "@nivo/radar": "^0.62.0",
-    "@progress/kendo-data-query": "^1.5.3",
-    "@progress/kendo-drawing": "^1.6.0",
-    "@progress/kendo-react-buttons": "^3.13.0",
-    "@progress/kendo-react-data-tools": "^3.13.0",
-    "@progress/kendo-react-dateinputs": "^3.13.0",
-    "@progress/kendo-react-dropdowns": "^3.13.0",
-    "@progress/kendo-react-grid": "^3.13.0",
-    "@progress/kendo-react-inputs": "^3.13.0",
-    "@progress/kendo-react-intl": "^3.13.0",
-    "@progress/kendo-theme-default": "^4.17.0",
     "@svgr/cli": "^5.4.0",
     "@svgr/core": "^5.4.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
@@ -32,7 +22,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.20",
     "mui-rte": "^1.25.0",
-    "nivo": "^0.31.0",
+    "nivo": "^0.7.0",
     "pg": "^8.2.1",
     "python-shell": "^2.0.1",
     "rc-progress": "^3.0.0",
@@ -41,12 +31,12 @@
     "react-download-link": "^2.3.0",
     "react-native-really-awesome-button": "^1.6.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
     "react-select": "^3.1.0",
     "sequelize": "^5.21.12",
     "sweet-alert": "^2.0.5",
     "sweetalert": "^2.1.2",
-    "unifont": "^1.0.0"
+    "unifont": "^1.0.0",
+    "webpack": "^4.44.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -59,8 +49,8 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "babel-cli": "^6.26.0",
-    "react-scripts": "latest"
+    "babel-cli": "^6.18.0",
+    "react-scripts": "^4.0.3"
   },
   "browserslist": {
     "production": [

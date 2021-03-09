@@ -15,7 +15,7 @@ const styles = theme => ({
 		textAlign: 'center',
 	},
 	header: {
-		height: 120,
+		height: 170,
 		background: theme.palette.background.primary.main,
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover'
@@ -90,8 +90,8 @@ const styles = theme => ({
 	orgHead: {
 		margin: '0',
 		textAlign: 'left',
-		fontSize: 12,
-		fontWeight: 500,
+		fontSize: 14,
+		fontWeight: 800,
 	},
 	orgName: {
 		margin: '0',
@@ -163,6 +163,13 @@ const styles = theme => ({
 const ProfileCard = ({ classes, displayName, tags, username, avatarUrl, description, profileUrl, coverUrl, stats }) => {
 	const backgroundStyle = coverUrl ? { backgroundImage: `url('${coverUrl}')` } : null;
 	const theme = useTheme();
+	const orgNames = [
+		"Shyplite (Oct 2020 - Present)",
+		"Irasus Tech. (Feb 2020 - Oct 2020)",
+		"SGS Weather (Aug 2018 - Oct 2020)"
+	]
+
+	const orgSvg = (<svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29"><g><g><path fill={theme.palette.primary.main} d="M17.821 6.506a.673.673 0 0 1-.673.673h-2.243a.673.673 0 0 1-.673-.673V4.262c0-.371.301-.673.673-.673h2.243c.372 0 .673.302.673.673zm0 5.384a.673.673 0 0 1-.673.672h-2.243a.673.673 0 0 1-.673-.672V9.646c0-.371.301-.673.673-.673h2.243c.372 0 .673.302.673.673zm0 5.383a.673.673 0 0 1-.673.673h-2.243a.673.673 0 0 1-.673-.673V15.03c0-.372.301-.673.673-.673h2.243c.372 0 .673.301.673.673zm-3.589 9.647h-3.59v-4.711c0-.372.302-.673.674-.673h2.243c.372 0 .673.301.673.673zM9.97 17.946H7.727a.673.673 0 0 1-.673-.673V15.03c0-.372.3-.673.673-.673H9.97c.372 0 .673.301.673.673v2.243a.673.673 0 0 1-.673.673zm-2.916-8.3c0-.371.3-.673.673-.673H9.97c.372 0 .673.302.673.673v2.243a.673.673 0 0 1-.673.673H7.727a.673.673 0 0 1-.673-.672zm0-5.384c0-.371.3-.673.673-.673H9.97c.372 0 .673.302.673.673v2.244a.673.673 0 0 1-.673.673H7.727a.673.673 0 0 1-.673-.673zM23.205 26.92V1.346C23.205.603 22.603 0 21.86 0H3.016C2.272 0 1.67.603 1.67 1.346V26.92H.548a.673.673 0 0 0-.673.673v1.121H25v-1.121a.673.673 0 0 0-.673-.673z" /></g></g></svg>)
 
 	return (
 		<Paper elevation={1} spacing={3} className={classes.root}>
@@ -176,16 +183,17 @@ const ProfileCard = ({ classes, displayName, tags, username, avatarUrl, descript
 			{/* <DropDown /> */}
 			<div className={classes.orgDetails}>
 				<div>
-
-					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29"><g><g><path fill={theme.palette.primary.main} d="M17.821 6.506a.673.673 0 0 1-.673.673h-2.243a.673.673 0 0 1-.673-.673V4.262c0-.371.301-.673.673-.673h2.243c.372 0 .673.302.673.673zm0 5.384a.673.673 0 0 1-.673.672h-2.243a.673.673 0 0 1-.673-.672V9.646c0-.371.301-.673.673-.673h2.243c.372 0 .673.302.673.673zm0 5.383a.673.673 0 0 1-.673.673h-2.243a.673.673 0 0 1-.673-.673V15.03c0-.372.301-.673.673-.673h2.243c.372 0 .673.301.673.673zm-3.589 9.647h-3.59v-4.711c0-.372.302-.673.674-.673h2.243c.372 0 .673.301.673.673zM9.97 17.946H7.727a.673.673 0 0 1-.673-.673V15.03c0-.372.3-.673.673-.673H9.97c.372 0 .673.301.673.673v2.243a.673.673 0 0 1-.673.673zm-2.916-8.3c0-.371.3-.673.673-.673H9.97c.372 0 .673.302.673.673v2.243a.673.673 0 0 1-.673.673H7.727a.673.673 0 0 1-.673-.672zm0-5.384c0-.371.3-.673.673-.673H9.97c.372 0 .673.302.673.673v2.244a.673.673 0 0 1-.673.673H7.727a.673.673 0 0 1-.673-.673zM23.205 26.92V1.346C23.205.603 22.603 0 21.86 0H3.016C2.272 0 1.67.603 1.67 1.346V26.92H.548a.673.673 0 0 0-.673.673v1.121H25v-1.121a.673.673 0 0 0-.673-.673z" /></g></g></svg>
-
+					{orgSvg}
 				</div>
 				<Typography color="primary">
 					<div className={classes.orgContent}>
 						<p className={classes.orgHead}>Organisation</p>
-						<p className={classes.orgName}>SGS Weather (Aug 2018 - Present)</p>
+						{orgNames.map(org => (
+							<p className={classes.orgName}>{org}</p>
+						))}
 					</div>
 				</Typography>
+				
 			</div>
 			<Typography className={classes.skillsetWrapper} color="secondary">
 
